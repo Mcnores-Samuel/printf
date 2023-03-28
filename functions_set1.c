@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print-char - prints a character to the console.
+ * print_char - prints a character to the console.
  * @arg: a character to print.
  * Return: 1 to indicate that one character was printed.
  */
@@ -27,6 +27,9 @@ int print_string(va_list arg)
 {
 	char *str = va_arg(arg, char *);
 	int i;
+
+	if (str == NULL)
+		str = "(nil)";
 
 	for (i = 0; str[i]; i++)
 	{

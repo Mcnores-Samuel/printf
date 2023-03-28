@@ -8,7 +8,7 @@
  * (excluding the null byte used to end output to strings)
  * write output to stdout, the standard output stream
  */
-int _printf(const char *format,...)
+int _printf(const char *format, ...)
 {
 	va_list args;
 	int (*fun_ptr)(va_list);
@@ -47,7 +47,7 @@ int _printf(const char *format,...)
 		}
 		i++;
 	}
-	va_end (args);
+	va_end(args);
 	return (bytes);
 }
 
