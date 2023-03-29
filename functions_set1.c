@@ -10,6 +10,9 @@ int print_char(va_list arg)
 {
 	char c = va_arg(arg, int);
 
+	if (c == '\0')
+		return(-1);
+
 	if (c != '\0')
 	{
 		print(c, 1);
@@ -29,7 +32,7 @@ int print_string(va_list arg)
 	int i;
 
 	if (str == NULL)
-		str = "(nil)";
+		return(-1);
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
