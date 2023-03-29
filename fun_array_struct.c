@@ -20,6 +20,8 @@ int (*get_function(const char c))(va_list)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
+		{'d', print_decimal},
+		{'i', print_integer},
 		{'\0', NULL}
 	};
 

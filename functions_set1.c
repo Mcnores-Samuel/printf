@@ -48,3 +48,91 @@ int print_percent(__attribute__((unused))va_list arg)
 	print('%', 1);
 	return (1);
 }
+
+/**
+ * print_integer - prints an integer
+ * @arguments: integer to print
+ *
+ * Return: number of chars and digits printed
+ */
+
+int print_integer(va_list arg)
+{
+	int x[10];
+	int f, d, t, y, i;
+
+	t = va_arg(arg, int);
+	i = 0;
+	d = 1000000000;
+	x[0] = t / d;
+
+	for (f = 1; f < 10; f++)
+	{
+		d /= 10;
+		x[f] = (t / d) % 10;
+	}
+	if (t < 0)
+	{
+		print('-', 1);
+		i++;
+
+		for (f = 0; f < 10; f++)
+			x[f] *= -1;
+	}
+	for (f = 0, y = 0; f < 10; f++)
+	{
+		y += x[f];
+
+		if (y != 0 || f == 9)
+		{
+			print('0' + x[f], 1);
+			i++;
+		}
+	}
+
+	return (i);
+}
+
+/**
+ * print_decimal - print a decimal
+ * @arguments: decimal to print
+ *
+ * Return: number of characters and digits printed
+ */
+
+int print_decimal(va_list arg)
+{
+	int x[10];
+	int f, d, t, y, i;
+
+	t = va_arg(arg, int);
+	i = 0;
+	d = 1000000000;
+	x[0] = t / d;
+
+	for (f = 1; f < 10; f++)
+	{
+		d /= 10;
+		x[f] = (t / d) % 10;
+	}
+	if (t < 0)
+	{
+		print('-', 1);
+		i++;
+
+		for (f = 0; f < 10; f++)
+			x[f] *= -1;
+	}
+	for (f = 0, y = 0; f < 10; f++)
+	{
+		y += x[f];
+
+		if (y != 0 || f == 9)
+		{
+			print('0' + x[f], 1);
+			i++;
+		}
+	}
+
+	return (i);
+}
