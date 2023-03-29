@@ -22,6 +22,7 @@ int (*get_function(const char c))(va_list)
 		{'%', print_percent},
 		{'d', print_decimal},
 		{'i', print_integer},
+		{'b', _binary},
 		{'\0', NULL}
 	};
 
