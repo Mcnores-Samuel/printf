@@ -23,7 +23,7 @@ int _binary(va_list arg)
 
 	for (j = i - 1; j >= 0; j--)
 	{
-		print(binary[j], 1);
+		print(binary[j] + '0', 1);
 	}
 
 	return (i);
