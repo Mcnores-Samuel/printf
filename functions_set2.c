@@ -14,7 +14,7 @@ int _binary(va_list arg)
 	num = va_arg(arg, unsigned int);
 
 	if (num <= 0)
-		return(-1);
+		return (-1);
 
 	while (num > 0)
 	{
