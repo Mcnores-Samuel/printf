@@ -13,8 +13,7 @@ int _binary(va_list arg)
 
 	num = va_arg(arg, unsigned int);
 
-	if (num <= 0 && !(num))
-		print(num, 5);
+	if (num <= 0)
 		return(-1);
 
 	while (num > 0)
