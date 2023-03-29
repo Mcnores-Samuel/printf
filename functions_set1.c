@@ -49,7 +49,7 @@ int print_percent(__attribute__((unused))va_list arg)
 	return (1);
 }
 
-**
+/**
  * print_integer - prints an integer
  * @arguments: integer to print
  *
