@@ -8,8 +8,8 @@
  */
 int _binary(va_list arg)
 {
-	int remainder;
-	unsigned int binary[BUFFER_SIZE], i = 0, j, num;
+	int remainder, i = 0, j;
+	unsigned int binary[BUFFER_SIZE], num;
 
 	num = va_arg(arg, unsigned int);
 
