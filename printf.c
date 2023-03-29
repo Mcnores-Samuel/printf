@@ -25,19 +25,19 @@ int _printf(const char *format, ...)
 		{
 			i++;
 
-			if (!(format[i]))
+			if (format[i] == '\0');
 				return (-1);
 
 			fun_ptr = get_function(format[i]);
-			if (fun_ptr)
-			{
-				bytes += fun_ptr(args);
-			}
-			else
+			if (fun_ptr == NULL)
 			{
 				print('%', 1);
 				print(format[i], 1);
 				bytes += 2;
+			}
+			else
+			{
+				bytes += fun_ptr(args);
 			}
 		}
 		else
