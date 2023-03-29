@@ -91,7 +91,6 @@ int print_integer(va_list arg)
 	}
 
 	return (i);
-}
 
 /**
  * print_decimal - print a decimal
