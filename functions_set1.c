@@ -49,19 +49,19 @@ int print_percent(__attribute__((unused))va_list arg)
 	return (1);
 }
 
-/**
+**
  * print_integer - prints an integer
  * @arguments: integer to print
  *
  * Return: number of chars and digits printed
  */
 
-int print_integer(va_list arg)
+int print_integer(va_list arguments)
 {
 	int x[10];
 	int f, d, t, y, i;
 
-	t = va_arg(arg, int);
+	t = va_arg(arguments, int);
 	i = 0;
 	d = 1000000000;
 	x[0] = t / d;
@@ -91,6 +91,7 @@ int print_integer(va_list arg)
 	}
 
 	return (i);
+}
 
 /**
  * print_decimal - print a decimal
@@ -99,12 +100,12 @@ int print_integer(va_list arg)
  * Return: number of characters and digits printed
  */
 
-int print_decimal(va_list arg)
+int print_decimal(va_list arguments)
 {
 	int x[10];
 	int f, d, t, y, i;
 
-	t = va_arg(arg, int);
+	t = va_arg(arguments, int);
 	i = 0;
 	d = 1000000000;
 	x[0] = t / d;
