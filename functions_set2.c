@@ -40,7 +40,7 @@ int _binary(va_list arg)
  */
 int _unsigned_int(va_list arg)
 {
-	int array[BUFFER_SIZE], i = 0;
+	int array[BUFFER_SIZE], i = 0, j;
 
 	unsigned int num = va_arg(arg, unsigned int);
 
@@ -51,7 +51,7 @@ int _unsigned_int(va_list arg)
 		i++;
 	}
 
-	for (int j = i - 1; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		print(array[j] + '0', 1);
 	}
