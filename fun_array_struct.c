@@ -23,6 +23,8 @@ int (*get_function(const char c))(va_list)
 		{'d', print_decimal},
 		{'i', print_integer},
 		{'b', _binary},
+		{'u', _unsigned_int},
+		{'o', _octal},
 		{'\0', NULL}
 	};
 
