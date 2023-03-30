@@ -71,9 +71,6 @@ int _octal(va_list arg)
 	unsigned int octal[BUFFER_SIZE], num;
 
 	num = va_arg(arg, unsigned int);
-	
-	if (num <= 0)
-		return(-1);
 
 	while (num > 0)
 	{
@@ -106,9 +103,6 @@ int lowercase_hex(va_list arg)
 	unsigned int hex_num_array[BUFFER_SIZE], num;
 
 	num = va_arg(arg, unsigned int);
-
-	if (num < 0)
-		return(-1);
 
 	while (num > 0)
 	{
@@ -145,9 +139,6 @@ int uppercase_hex(va_list arg)
 	unsigned int hex_num_array[BUFFER_SIZE], num;
 
 	num = va_arg(arg, unsigned int);
-
-	if (num < 0)
-		return (-1);
 
 	while (num > 0)
 	{
