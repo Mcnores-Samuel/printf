@@ -25,6 +25,8 @@ int (*get_function(const char c))(va_list)
 		{'b', _binary},
 		{'u', _unsigned_int},
 		{'o', _octal},
+		{'x', lowercase_hex},
+		{'X', uppercase_hex},
 		{'\0', NULL}
 	};
 

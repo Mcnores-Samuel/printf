@@ -68,7 +68,7 @@ int _unsigned_int(va_list arg)
 int _octal(va_list arg)
 {
 	int remainder, i = 0, j;
-	unsigned int octal[1024], num;
+	unsigned int octal[BUFFER_SIZE], num;
 
 	num = va_arg(arg, unsigned int);
 
@@ -86,6 +86,78 @@ int _octal(va_list arg)
 	for (j = i - 1; j >= 0; j--)
 	{
 		print(octal[j] + '0', 1);
+	}
+	return (i);
+}
+
+/**
+ * lowercase_hex - converts integer to hexadecimal numbers and
+ * the letter in hexadecimal number are lowercase letter.
+ * @arg: the integer to converts.
+ * Return: total length of the output as the character bytes
+ */
+int lowercase_hex(va_list arg)
+{
+	int hex[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 97, 98, 99, 100, 101, 102};
+	int remainder, i = 0, j;
+	unsigned int hex_num_array[BUFFER_SIZE], num;
+
+	num = va_arg(arg, unsigned int);
+
+	while (num > 0)
+	{
+		remainder = num % 16;
+		hex_num_array[i] = hex[remainder];
+		i++;
+		num = num / 16;
+	}
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		if (hex_num_array[j] <= 9)
+		{
+			print(hex_num_array[j] + '0', 1);
+		}
+		else
+		{
+			print(hex_num_array[j], 1);
+		}
+	}
+	return (i);
+}
+
+/**
+ * uppercase_hex - converts integer to hexadecimal numbers and
+ * the letter in hexadecimal are uppercase letter
+ * @arg: the integer to converts.
+ * Return: total length of the output as the character bytes
+ */
+int uppercase_hex(va_list arg)
+{
+	int hex[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 65, 66, 67, 68, 69, 70};
+	int remainder, i = 0, j;
+	unsigned int hex_num_array[BUFFER_SIZE], num;
+
+	num = va_arg(arg, unsigned int);
+
+	while (num > 0)
+	{
+		remainder = num % 16;
+		hex_num_array[i] = hex[remainder];
+		i++;
+		num = num / 16;
+	}
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		if (hex_num_array[j] <= 9)
+		{
+			print(hex_num_array[j] + '0', 1);
+		}
+		else
+		{
+			print(hex_num_array[j], 1);
+		}
 	}
 	return (i);
 }
