@@ -57,9 +57,9 @@ int print_percent(__attribute__((unused))va_list arg)
 
 int _integer(va_list arg)
 {
-	long int num_array[BUFFER_SIZE], i;
+	int num_array[BUFFER_SIZE], i;
 	int bytes = 0, j;
-	long int num = va_arg(arg, long int);
+	int num = va_arg(arg, int);
 
 	if (num < 0){
 		print('-', 1);
@@ -90,9 +90,9 @@ int _integer(va_list arg)
 
 int _decimal(va_list arg)
 {
-	long int num_array[BUFFER_SIZE], i;
+	int num_array[BUFFER_SIZE], i;
 	int bytes = 0, j;
-	long int num = va_arg(arg, long int);
+	int num = va_arg(arg, int);
 
 	if (num < 0){
 		print('-', 1);
