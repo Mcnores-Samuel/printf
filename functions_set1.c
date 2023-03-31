@@ -29,7 +29,7 @@ int print_string(va_list arg)
 	int i;
 
 	if (str == NULL)
-		str = "(null)";
+		str = "(nil)";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -50,89 +50,66 @@ int print_percent(__attribute__((unused))va_list arg)
 }
 
 /**
- * print_integer - prints an integer
+ * _integer - prints an integer
  * @arguments: integer to print
- *
- * Return: number of chars and digits printed
+ * Return: number of chars or digits printed
  */
 
-int print_integer(va_list arguments)
+int _integer(va_list arg)
 {
-	int x[10];
-	int f, d, t, y, i;
+	long int num_array[BUFFER_SIZE], i;
+	int bytes = 0, j;
+	long int num = va_arg(arg, long int);
 
-	t = va_arg(arguments, int);
-	i = 0;
-	d = 1000000000;
-	x[0] = t / d;
-
-	for (f = 1; f < 10; f++)
-	{
-		d /= 10;
-		x[f] = (t / d) % 10;
-	}
-	if (t < 0)
-	{
+	if (num < 0){
 		print('-', 1);
-		i++;
-
-		for (f = 0; f < 10; f++)
-			x[f] *= -1;
+		num = num * -1;
+		bytes = 1;
 	}
-	for (f = 0, y = 0; f < 10; f++)
+
+	for (i = 0; num > 0; i++)
 	{
-		y += x[f];
-
-		if (y != 0 || f == 9)
-		{
-			print('0' + x[f], 1);
-			i++;
-		}
+		num_array[i] = num % 10;
+		num = num / 10;
+		bytes += 1;
 	}
 
-	return (i);
+	for (j = i - 1; j >= 0; j--)
+	{
+		print(num_array[j] + '0', 1);
+	}
+	return (bytes);
 }
 
 /**
- * print_decimal - print a decimal
+ * _decimal - print a decimal
  * @arguments: decimal to print
  *
  * Return: number of characters and digits printed
  */
 
-int print_decimal(va_list arguments)
+int _decimal(va_list arg)
 {
-	int x[10];
-	int f, d, t, y, i;
+	long int num_array[BUFFER_SIZE], i;
+	int bytes = 0, j;
+	long int num = va_arg(arg, long int);
 
-	t = va_arg(arguments, int);
-	i = 0;
-	d = 1000000000;
-	x[0] = t / d;
-
-	for (f = 1; f < 10; f++)
-	{
-		d /= 10;
-		x[f] = (t / d) % 10;
-	}
-	if (t < 0)
-	{
+	if (num < 0){
 		print('-', 1);
-		i++;
-
-		for (f = 0; f < 10; f++)
-			x[f] *= -1;
+		num = num * -1;
+		bytes = 1;
 	}
-	for (f = 0, y = 0; f < 10; f++)
+
+	for (i = 0; num > 0; i++)
 	{
-		y += x[f];
-
-		if (y != 0 || f == 9)
-		{
-			print('0' + x[f], 1);
-			i++;
-		}
+		num_array[i] = num % 10;
+		num = num / 10;
+		bytes += 1;
 	}
 
-	return (i);
+	for (j = i - 1; j >= 0; j--)
+	{
+		print(num_array[j] + '0', 1);
+	}
+	return (bytes);
 }
