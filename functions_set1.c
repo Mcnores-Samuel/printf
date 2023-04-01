@@ -29,6 +29,9 @@ int print_string(va_list arg)
 	int i;
 
 	if (str == NULL)
+		str = "(null)";
+
+	if (str[0] == '\0')
 		str = " ";
 
 	for (i = 0; str[i] != '\0'; i++)
