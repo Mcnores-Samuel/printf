@@ -61,6 +61,12 @@ int _string(va_list arg)
 				print(0 + '0', 1);
 				_hex(str[i]);
 			}
+			else if (str[i] > 10)
+			{
+				print('\\', 1);
+				print('x', 1);
+				_hex(str[i]);
+			}
 			else
 			{
 				print('\\', 1);
