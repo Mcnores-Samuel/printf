@@ -43,14 +43,14 @@ int _hex(int num)
  */
 int _string(va_list arg)
 {
-	int i;
+	int i, len;
 
 	char *str = va_arg(arg, char *);
 
 	if (str == NULL)
 		str = "(null)";
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++, len++)
 	{
 		if (str[i] < 32 || str[i] >= 127)
 		{
@@ -80,5 +80,5 @@ int _string(va_list arg)
 			print(str[i], 1);
 		}
 	}
-	return (i);
+	return (len);
 }

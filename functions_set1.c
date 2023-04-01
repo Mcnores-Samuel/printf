@@ -11,7 +11,7 @@ int print_char(va_list arg)
 	char c = va_arg(arg, int);
 
 	if (c == '\0')
-		return (-1);
+		return (1);
 
 	print(c, 1);
 	return (1);
@@ -26,7 +26,7 @@ int print_char(va_list arg)
 int print_string(va_list arg)
 {
 	char *str = va_arg(arg, char *);
-	int i;
+	int i, len = 0;
 
 	if (str == NULL)
 		str = "(null)";
@@ -34,8 +34,9 @@ int print_string(va_list arg)
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		print(str[i], 1);
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
 /**
