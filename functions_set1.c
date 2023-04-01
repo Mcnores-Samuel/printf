@@ -29,7 +29,7 @@ int print_string(va_list arg)
 	int i;
 
 	if (str == NULL)
-		str = "(nil)";
+		str = " ";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
