@@ -61,6 +61,12 @@ int _integer(va_list arg)
 	int bytes = 0, j;
 	int num = va_arg(arg, int);
 
+	if (num == 0)
+	{
+		print(num + '0', 1);
+		return (1);
+	}
+
 	if (num < 0){
 		print('-', 1);
 		num = num * -1;
@@ -93,6 +99,12 @@ int _decimal(va_list arg)
 	int num_array[BUFFER_SIZE], i;
 	int bytes = 0, j;
 	int num = va_arg(arg, int);
+
+	if (num == 0)
+	{
+		print(num + '0', 1);
+		return (1);
+	}
 
 	if (num < 0){
 		print('-', 1);
