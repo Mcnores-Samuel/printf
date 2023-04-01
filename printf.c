@@ -24,7 +24,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-
+			bytes++;
+			
 			if (!(format[i]))
 				return (-1);
 
