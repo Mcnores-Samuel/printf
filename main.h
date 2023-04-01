@@ -33,5 +33,7 @@ int _octal(va_list arg);
 int _unsigned_int(va_list arg);
 int lowercase_hex(va_list arg);
 int uppercase_hex(va_list arg);
+int _hex(int num);
+int _string(va_list arg);
 
 #endif
