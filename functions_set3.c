@@ -43,7 +43,7 @@ int _hex(int num)
  */
 int _string(va_list arg)
 {
-	int i, len;
+	int i, len = 0;
 
 	char *str = va_arg(arg, char *);
 
@@ -59,20 +59,20 @@ int _string(va_list arg)
 				print('\\', 1);
 				print('x', 1);
 				print(0 + '0', 1);
-				_hex(str[i]);
+				len += _hex(str[i]) + 3;
 			}
 			else if (str[i] > 10)
 			{
 				print('\\', 1);
 				print('x', 1);
-				_hex(str[i]);
+				len += _hex(str[i]) + 3;
 			}
 			else
 			{
 				print('\\', 1);
 				print('x', 1);
 				print(0 + '0', 1);
-				_hex(str[i]);
+				len += _hex(str[i]) + 3;
 			}
 		}
 		else
